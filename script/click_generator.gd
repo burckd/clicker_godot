@@ -1,6 +1,7 @@
 class_name ClickGenerator
 extends Control
 
+
 @export var label : Label
 @export var button : Button
 @export var timer : Timer
@@ -25,7 +26,7 @@ func update_button_text() -> void:
 	button.text = "Start " + str(count)
 
 func begin_generating_click() -> void:
-	count += 1
+	count += count
 	timer.start()
 	timer_limit.start()
 	timer_limit.wait_time = count
@@ -34,11 +35,10 @@ func begin_generating_click() -> void:
 func _on_button_pressed():
 	begin_generating_click()
 
-
 func _on_timer_timeout():
 	create_click()
 
-
 func _on_timer_limit_timeout():
 	timer.stop()
+	update_button_text()
 	button.disabled = false
