@@ -1,6 +1,6 @@
 class_name ClickGenerator
 extends Control
-
+## timer based click generator
 
 @export var label : Label
 @export var button : Button
